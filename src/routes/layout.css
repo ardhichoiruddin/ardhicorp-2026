@@ -1,5 +1,39 @@
 @import 'tailwindcss';
 
+@layer base {
+	/* --- Caveat Family --- */
+	@font-face {
+		font-family: 'Caveat';
+		src: url('/assets/fonts/Caveat-Regular.woff2') format('woff2');
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Caveat';
+		src: url('/assets/fonts/Caveat-SemiBold.woff2') format('woff2');
+		font-weight: 600;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Caveat';
+		src: url('/assets/fonts/Caveat-Bold.woff2') format('woff2');
+		font-weight: 700;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	/* --- Patrick Hand --- */
+	@font-face {
+		font-family: 'Patrick Hand';
+		src: url('/assets/fonts/PatrickHand-Regular.woff2') format('woff2');
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+	}
+}
+
 /* Menggantikan darkMode: "class" */
 @custom-variant dark (&:where(.dark, .dark *));
 

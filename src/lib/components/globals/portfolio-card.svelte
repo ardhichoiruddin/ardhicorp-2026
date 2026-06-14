@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Image from '$lib/components/globals/image.svelte';
 	interface Props {
 		uid: string;
 		projectNow: 'Not Started' | 'Live' | 'Building';
@@ -22,10 +23,10 @@
 		class="w-full aspect-video mb-4 sketch-border border-dashed overflow-hidden bg-surface-container"
 	>
 		<div class="w-full h-full flex items-center justify-center text-on-surface-variant">
-			<img
+			<Image
+				alt={title}
 				src={imageUrl}
 				class="grayscale group-hover:grayscale-0 transition-all duration-700"
-				alt={title}
 			/>
 		</div>
 	</div>

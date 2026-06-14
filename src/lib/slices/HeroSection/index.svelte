@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Content } from '@prismicio/client';
 	import type { SliceComponentProps } from '@prismicio/svelte';
+	import Image from '$lib/components/globals/image.svelte';
 
 	type Props = SliceComponentProps<Content.HeroSectionSlice>;
 
@@ -31,11 +32,10 @@
 			<div
 				class="w-24 h-24 rounded-full sketch-border overflow-hidden bg-surface-container-highest shrink-0 relative"
 			>
-				<img
-					alt={photoProfil.alt}
+				<Image
 					class="w-full h-full object-cover"
-					data-alt="A sketchy, hand-drawn style portrait avatar of a young developer. The portrait is drawn in a loose, graphite pencil style on a light parchment background, conveying a raw, authentic, and creative aesthetic suitable for a personal portfolio. The lines are slightly irregular and expressive."
-					src={photoProfil.url}
+					src={photoProfil.url || ''}
+					alt={photoProfil.alt || ''}
 				/>
 			</div>
 			<div>

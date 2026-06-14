@@ -36,7 +36,6 @@
 		<img
 			alt={image.alt}
 			class="w-full aspect-video object-cover opacity-90 grayscale hover:grayscale-0 transition-all duration-700"
-			data-alt="A detailed black and white charcoal sketch of a surreal 3D geometric landscape where pencil strokes turn into physical mountains. The lighting is dramatic and moody, reflecting a personal sketchbook aesthetic with visible paper texture and rough graphite gradients. The overall mood is creative and tactile, as if the viewer is looking at an artist's private study."
 			src={image.url}
 		/>
 		<!-- Status Badge -->
