@@ -1,6 +1,8 @@
 import type { PageServerLoad } from './$types';
 import { createClient } from '$lib/prismicio';
 
+export const prerender = false;
+
 export const load: PageServerLoad = async ({ fetch, cookies, url }) => {
 	const client = createClient({ fetch, cookies });
 
