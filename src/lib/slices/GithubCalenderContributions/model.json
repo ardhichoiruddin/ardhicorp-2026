@@ -1,0 +1,32 @@
+{
+  "id": "github_calender_contributions",
+  "type": "SharedSlice",
+  "name": "GithubCalenderContributions",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Default",
+      "imageUrl": "",
+      "docURL": "...",
+      "version": "initial",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "github_username": {
+          "type": "Text",
+          "config": {
+            "label": "Github Username",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ],
+  "description": "GithubCalenderContributions"
+}

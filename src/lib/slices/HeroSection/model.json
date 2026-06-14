@@ -1,0 +1,169 @@
+{
+  "id": "hero_section",
+  "type": "SharedSlice",
+  "name": "HeroSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Default",
+      "imageUrl": "",
+      "docURL": "...",
+      "version": "initial",
+      "primary": {
+        "photo_profile": {
+          "type": "Image",
+          "config": {
+            "label": "Photo Profile",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "name": {
+          "type": "Text",
+          "config": {
+            "label": "Name",
+            "placeholder": "write your name"
+          }
+        },
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": "Write your title"
+          }
+        },
+        "sort_introducing": {
+          "type": "Text",
+          "config": {
+            "label": "Sort Introducing",
+            "placeholder": ""
+          }
+        },
+        "primary_button": {
+          "type": "Group",
+          "config": {
+            "label": "Primary Button",
+            "repeat": false,
+            "fields": {
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "Label",
+                  "placeholder": ""
+                }
+              },
+              "link": {
+                "type": "Text",
+                "config": {
+                  "label": "Link",
+                  "placeholder": ""
+                }
+              },
+              "new_page": {
+                "type": "Boolean",
+                "config": {
+                  "label": "New Page",
+                  "default_value": false,
+                  "placeholder_true": "true",
+                  "placeholder_false": "false"
+                }
+              },
+              "type": {
+                "type": "Select",
+                "config": {
+                  "label": "Type",
+                  "placeholder": "",
+                  "options": [
+                    "link",
+                    "email"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "secondary_button": {
+          "type": "Group",
+          "config": {
+            "label": "Secondary Button",
+            "repeat": false,
+            "fields": {
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "Label",
+                  "placeholder": ""
+                }
+              },
+              "link": {
+                "type": "Text",
+                "config": {
+                  "label": "Link",
+                  "placeholder": ""
+                }
+              },
+              "new_page": {
+                "type": "Boolean",
+                "config": {
+                  "label": "New Page",
+                  "default_value": false,
+                  "placeholder_true": "true",
+                  "placeholder_false": "false"
+                }
+              },
+              "type": {
+                "type": "Select",
+                "config": {
+                  "label": "Type",
+                  "placeholder": "",
+                  "options": [
+                    "link",
+                    "email"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "social_media": {
+          "type": "Group",
+          "config": {
+            "label": "Social Media",
+            "repeat": true,
+            "fields": {
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "Label",
+                  "placeholder": ""
+                }
+              },
+              "link": {
+                "type": "Link",
+                "config": {
+                  "label": "Link",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
+              },
+              "new_page": {
+                "type": "Boolean",
+                "config": {
+                  "label": "New Page",
+                  "default_value": false,
+                  "placeholder_true": "true",
+                  "placeholder_false": "false"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "description": "HeroSection"
+}

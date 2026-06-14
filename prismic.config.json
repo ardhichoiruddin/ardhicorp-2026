@@ -1,0 +1,17 @@
+{
+  "repositoryName": "ardhicorp",
+  "routes": [
+    {
+      "type": "home",
+      "path": "/"
+    },
+    {
+      "type": "portfolio",
+      "path": "/portfolio/:uid"
+    },
+    {
+      "type": "privacy_policy",
+      "path": "/privacy-policy"
+    }
+  ]
+}

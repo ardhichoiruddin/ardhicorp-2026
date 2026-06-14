@@ -1,0 +1,82 @@
+{
+  "id": "experience",
+  "type": "SharedSlice",
+  "name": "Experience",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Default",
+      "imageUrl": "",
+      "docURL": "...",
+      "version": "initial",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "cards": {
+          "type": "Group",
+          "config": {
+            "label": "Card",
+            "repeat": true,
+            "fields": {
+              "company_name": {
+                "type": "Text",
+                "config": {
+                  "label": "Company Name",
+                  "placeholder": ""
+                }
+              },
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "Title",
+                  "placeholder": ""
+                }
+              },
+              "from": {
+                "type": "Date",
+                "config": {
+                  "label": "From",
+                  "placeholder": ""
+                }
+              },
+              "to": {
+                "type": "Date",
+                "config": {
+                  "label": "To",
+                  "placeholder": ""
+                }
+              },
+              "present": {
+                "type": "Boolean",
+                "config": {
+                  "label": "Present",
+                  "default_value": false,
+                  "placeholder_true": "true",
+                  "placeholder_false": "false"
+                }
+              },
+              "place": {
+                "type": "Select",
+                "config": {
+                  "label": "Place",
+                  "placeholder": "",
+                  "options": [
+                    "Remote",
+                    "On Site"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "description": "Experience"
+}
