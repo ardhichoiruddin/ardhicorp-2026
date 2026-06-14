@@ -39,7 +39,9 @@
 <!-- TopNavBar (Mobile) -->
 <nav class="xl:hidden block w-full sticky top-0 z-50 bg-surface border-b-2 border-primary">
 	<div class="flex justify-between items-center px-6 py-4 max-w-max-width-content mx-auto">
-		<span class="font-h1-mobile text-h1-mobile text-on-surface">{name}</span>
+		<a href="/">
+			<span class="font-h1-mobile text-h1-mobile text-on-surface">{name}</span>
+		</a>
 		<div class="flex gap-4">
 			<button onclick={toogleMobileNavbar} aria-label="mobile menu">
 				{#if isMobileNavbarActive}
@@ -55,11 +57,11 @@
 <nav
 	data-navbarMobileActive={isMobileNavbarActive}
 	class={[
-		'z-40 flex-col justify-between py-10 px-4 h-[calc(100vh-71.59px)] xl:h-full fixed bottom-0 xl:top-0 right-0 w-sidebar-width border-l-2 border-dashed border-outline bg-surface-container',
+		'z-40 flex-col justify-between py-10 px-4 h-[calc(100%-71.59px)] xl:h-full fixed bottom-0 xl:top-0 right-0 w-sidebar-width border-l-2 border-dashed border-outline bg-surface-container',
 		'hidden data-[navbarMobileActive=true]:flex xl:flex'
 	]}
 >
-	<div>
+	<div class="flex-1 min-h-0 overflow-y-auto">
 		<div class="mb-8 hidden xl:block">
 			<a href="/">
 				<span class="font-h2 text-h2 text-on-surface">{name}</span>
@@ -87,20 +89,12 @@
 			{/each}
 		</ul>
 	</div>
-	<div class="flex flex-col gap-4">
+	<div class="shrink-0 flex flex-col gap-4">
 		<a
 			class="sketch-border px-4 py-2 text-primary font-bold hover:bg-surface-container-high transition-all duration-150 active:translate-y-0.5 active:translate-x-0.5"
 			href="/"
 		>
 			Contact Me
 		</a>
-		<div class="flex gap-4">
-			<a aria-label="code" class="text-on-surface-variant hover:text-primary" href="#"
-				><span class="icon-code-outline text-2xl"></span></a
-			>
-			<a aria-label="chat" class="text-on-surface-variant hover:text-primary" href="#"
-				><span class="icon-chat-outline text-2xl"></span></a
-			>
-		</div>
 	</div>
 </nav>
