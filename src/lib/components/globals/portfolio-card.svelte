@@ -38,7 +38,7 @@
 	</p>
 	<div class="flex items-center justify-between">
 		<div></div>
-		<a class="font-note text-note text-primary underline" href={`/portfolio/${uid}`}
+		<a class="font-body-lg text-note text-primary underline" href={`/portfolio/${uid}`}
 			>View Project →</a
 		>
 	</div>

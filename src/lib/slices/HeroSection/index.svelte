@@ -48,7 +48,7 @@
 			</div>
 		</div>
 		<div>
-			<span class="font-note text-note text-on-surface-variant">{hero.sort_introducing}</span>
+			<span class="font-body-lg text-body-lg text-on-surface-variant">{hero.sort_introducing}</span>
 		</div>
 		<div class="flex flex-wrap gap-4">
 			<a

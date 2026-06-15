@@ -49,7 +49,7 @@
 					<h3 class="font-h3 text-h3 text-primary">
 						{item.company_name}
 					</h3>
-					<span class="font-note text-note text-right text-on-surface-variant"
+					<span class="font-body-lg text-note text-right text-on-surface-variant"
 						>{dateFrom?.month}
 						{dateFrom?.year} -
 						{#if present}
