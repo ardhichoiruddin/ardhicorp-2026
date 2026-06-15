@@ -4,12 +4,6 @@ import { Resend } from 'resend';
 import { type } from 'arktype'; // 1. Import ArkType
 import { env } from '$env/dynamic/private';
 
-const RESEND_API_KEY = env.RESEND_API_KEY;
-const CONTACT_FROM_EMAIL = env.CONTACT_FROM_EMAIL;
-const CONTACT_TO_EMAIL = env.CONTACT_TO_EMAIL;
-
-const resend = new Resend(RESEND_API_KEY);
-
 // 2. Definisikan Skema Validasi ArkType
 // Aturan: min length 10 untuk semua, dan max length sesuai variabel Anda sebelumnya
 const contactSchema = type({
@@ -29,7 +23,12 @@ function escapeHtml(value: string) {
 }
 
 export const POST: RequestHandler = async ({ request }) => {
+	const RESEND_API_KEY = env.RESEND_API_KEY;
+	const CONTACT_FROM_EMAIL = env.CONTACT_FROM_EMAIL;
+	const CONTACT_TO_EMAIL = env.CONTACT_TO_EMAIL;
+
 	try {
+		const resend = new Resend(RESEND_API_KEY);
 		const body = await request.json();
 
 		// Trim string secara manual sebelum divalidasi oleh ArkType
