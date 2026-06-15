@@ -3,6 +3,7 @@ import type { RequestHandler } from './$types';
 import { Resend } from 'resend';
 import { type } from 'arktype'; // 1. Import ArkType
 import { env } from '$env/dynamic/private';
+import { turnstileValidateServer } from '$lib/helper/turnstile';
 
 // 2. Definisikan Skema Validasi ArkType
 // Aturan: min length 10 untuk semua, dan max length sesuai variabel Anda sebelumnya
@@ -26,8 +27,29 @@ export const POST: RequestHandler = async ({ request }) => {
 	const RESEND_API_KEY = env.RESEND_API_KEY;
 	const CONTACT_FROM_EMAIL = env.CONTACT_FROM_EMAIL;
 	const CONTACT_TO_EMAIL = env.CONTACT_TO_EMAIL;
+	const SECRET_TURNSTILE_KEY = env.SECRET_TURNSTILE_KEY;
+	const turnstileToken = request.headers.get('x-turnstile-token');
+
+	if (!turnstileToken) {
+		return json({ success: false, error: 'token not found in header' }, { status: 400 });
+	}
 
 	try {
+		const turnstileIsValid = await turnstileValidateServer({
+			secretKey: SECRET_TURNSTILE_KEY,
+			token: turnstileToken
+		});
+
+		if (!turnstileIsValid) {
+			return json(
+				{
+					success: false,
+					error: 'turnstile validate error'
+				},
+				{ status: 400 }
+			);
+		}
+
 		const resend = new Resend(RESEND_API_KEY);
 		const body = await request.json();
 
@@ -60,7 +82,7 @@ export const POST: RequestHandler = async ({ request }) => {
 		const { data, error } = await resend.emails.send({
 			from: `Ardhicorp Contact <${CONTACT_FROM_EMAIL}>`,
 			to: [CONTACT_TO_EMAIL],
-			subject: `[Ardhicorp Contact] ${subject}`,
+			subject: `[Ardhicorp Contact] ${subject} [${safeEmail}]`,
 			html: `
 				<h2>Pesan baru dari contact form ardhicorp.com</h2>
 				<p><strong>Nama:</strong> ${safeName}</p>

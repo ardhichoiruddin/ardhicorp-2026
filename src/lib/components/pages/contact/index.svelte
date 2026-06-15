@@ -2,6 +2,8 @@
 	import type { ContactDocumentData } from '../../../../../prismicio-types';
 	import Input from '$lib/components/globals/input.svelte';
 	import Textarea from '$lib/components/globals/textarea.svelte';
+	import { Turnstile } from 'svelte-turnstile';
+	import { PUBLIC_TURNSTILE_SITE_KEY } from '$env/static/public';
 
 	interface Props {
 		data: ContactDocumentData;
@@ -20,6 +22,7 @@
 		message: ''
 	});
 	let isSendMessageSuccess = $state<'ONPROGRESS' | 'SUCCESS' | 'FAILED'>('ONPROGRESS');
+	let turnstileToken = $state('');
 
 	async function handleContactSubmit(e: any) {
 		e.preventDefault();
@@ -27,6 +30,10 @@
 		sendLoading = true;
 		const response = await fetch(`/api/contact`, {
 			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				'X-Turnstile-Token': turnstileToken
+			},
 			body: JSON.stringify($state.snapshot(formData))
 		});
 		const result = (await response.json()) as
@@ -147,6 +154,13 @@
 					style="font-variation-settings: &quot;FILL&quot; 1"
 				></span>
 			</div>
+		</div>
+		<div class="mb-0">
+			<Turnstile
+				siteKey={PUBLIC_TURNSTILE_SITE_KEY}
+				on:turnstile-callback={(e) => (turnstileToken = e.detail.token)}
+				theme="light"
+			/>
 		</div>
 		<!-- Submit Button -->
 		<div class="pt-6 flex items-center gap-6">
