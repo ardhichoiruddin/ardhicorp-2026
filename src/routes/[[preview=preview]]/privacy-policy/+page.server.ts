@@ -3,9 +3,13 @@ import { createClient } from '$lib/prismicio';
 
 export const prerender = false;
 
-export const load: PageServerLoad = async ({ fetch, cookies }) => {
+export const load: PageServerLoad = async ({ fetch, cookies, setHeaders }) => {
 	const client = createClient({ fetch, cookies });
 	const page = await client.getSingle('privacy_policy');
+
+	setHeaders({
+		'Cache-Control': 'public, max-age=10, s-maxage=10, stale-while-revalidate=20'
+	});
 
 	return { page };
 };

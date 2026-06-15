@@ -3,7 +3,7 @@ import { createClient } from '$lib/prismicio';
 
 export const prerender = false;
 
-export const load: PageServerLoad = async ({ fetch, cookies, url }) => {
+export const load: PageServerLoad = async ({ fetch, cookies, url, setHeaders }) => {
 	const client = createClient({ fetch, cookies });
 
 	const pageQuery = url.searchParams.get('page') || '1';
@@ -20,6 +20,10 @@ export const load: PageServerLoad = async ({ fetch, cookies, url }) => {
 				field: 'document.first_publication_date',
 				direction: 'desc'
 			}
+		});
+
+		setHeaders({
+			'Cache-Control': 'public, max-age=10, s-maxage=10, stale-while-revalidate=20'
 		});
 
 		return {
