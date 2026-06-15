@@ -2,6 +2,10 @@
   "repositoryName": "ardhicorp",
   "routes": [
     {
+      "type": "contact",
+      "path": "/contact"
+    },
+    {
       "type": "home",
       "path": "/"
     },

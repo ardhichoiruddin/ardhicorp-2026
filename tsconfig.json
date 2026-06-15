@@ -14,8 +14,10 @@
 	},
 	"include": [
 		"src/**/*",
-		"prismicio-types.d.ts", // Ensure this is present or covered by a wildcard
-		".prismic/**/*"
+		"prismicio-types.d.ts",
+		".prismic/**/*",
+		".svelte-kit/ambient.d.ts",
+		".svelte-kit/types/**/$types.d.ts"
 	]
 	// Path aliases are handled by https://svelte.dev/docs/kit/configuration#alias
 	// except $lib which is handled by https://svelte.dev/docs/kit/configuration#files

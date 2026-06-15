@@ -44,10 +44,10 @@
 </script>
 
 <section data-slice-type={slice.slice_type} data-slice-variation={slice.variation} class="my-10">
-	<h2 class="font-h2 text-h2 text-primary dark:text-inverse-primary wavy-underline mb-8">
+	<h2 class="font-h2 text-h2 text-primary wavy-underline mb-8">
 		{title}
 	</h2>
-	<div class="bg-surface-container-lowest dark:bg-surface-container p-6 sketch-border">
+	<div class="bg-surface-container-lowest p-6 sketch-border">
 		{#if loading}
 			<span>Please wait. Currently retrieving data...</span>
 		{/if}
