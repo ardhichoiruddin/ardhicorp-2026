@@ -92,7 +92,7 @@
 	<div class="shrink-0 flex flex-col gap-4">
 		<a
 			class="sketch-border px-4 py-2 text-primary font-bold hover:bg-surface-container-high transition-all duration-150 active:translate-y-0.5 active:translate-x-0.5"
-			href="/"
+			href="/contact"
 		>
 			Contact Me
 		</a>

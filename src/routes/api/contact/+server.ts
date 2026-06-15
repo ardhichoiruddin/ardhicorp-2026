@@ -2,7 +2,11 @@ import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import { Resend } from 'resend';
 import { type } from 'arktype'; // 1. Import ArkType
-import { RESEND_API_KEY, CONTACT_FROM_EMAIL, CONTACT_TO_EMAIL } from '$env/static/private';
+import { env } from '$env/dynamic/private';
+
+const RESEND_API_KEY = env.RESEND_API_KEY;
+const CONTACT_FROM_EMAIL = env.CONTACT_FROM_EMAIL;
+const CONTACT_TO_EMAIL = env.CONTACT_TO_EMAIL;
 
 const resend = new Resend(RESEND_API_KEY);
 
