@@ -59,7 +59,7 @@
 <article class="space-y-6 mb-16">
 	<div
 		class={[
-			'[&>p]:text-body-lg [&>p]:text-on-surface [&>p]:leading-relaxed',
+			'[&>p]:text-body-lg [&>p]:text-on-surface [&>p]:leading-relaxed [&>p]:my-2 [&>p]:first:mt-0 [&>p]:last:mb-0',
 			'[&>h1]:text-4xl [&>h1]:font-body-lg [&>h1]:text-on-surface [&>h1]:leading-relaxed',
 			'[&>h2]:text-3xl [&>h2]:font-body-lg [&>h2]:text-on-surface [&>h2]:leading-relaxed',
 			'[&>h3]:text-2xl [&>h3]:font-body-lg [&>h3]:text-on-surface [&>h3]:leading-relaxed',
