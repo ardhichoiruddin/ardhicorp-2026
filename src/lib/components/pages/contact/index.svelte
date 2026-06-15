@@ -3,7 +3,9 @@
 	import Input from '$lib/components/globals/input.svelte';
 	import Textarea from '$lib/components/globals/textarea.svelte';
 	import { Turnstile } from 'svelte-turnstile';
-	import { PUBLIC_TURNSTILE_SITE_KEY } from '$env/static/public';
+	import { env } from '$env/dynamic/public';
+
+	const PUBLIC_TURNSTILE_SITE_KEY = env.PUBLIC_TURNSTILE_SITE_KEY;
 
 	interface Props {
 		data: ContactDocumentData;
