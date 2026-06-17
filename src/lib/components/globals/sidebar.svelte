@@ -22,7 +22,6 @@
 	const pathHash = $derived(page.url.hash);
 
 	let isMobileNavbarActive = $state(false);
-	let navbarContainer = $state<HTMLElement>()!;
 
 	const cleanUrl = (url: string) => url.replace(/\/+(?=#|$)/, '').replace(/\/$/, '');
 
