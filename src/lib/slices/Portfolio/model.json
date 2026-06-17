@@ -36,7 +36,8 @@
                         "image",
                         "title",
                         "project_now",
-                        "short_description"
+                        "short_description",
+                        "year"
                       ]
                     }
                   ],

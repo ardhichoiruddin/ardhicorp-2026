@@ -13,6 +13,7 @@
 	const techStacks = $derived(data.tech_stacks);
 	const description = $derived(data.decription);
 	const link = $derived(data.link);
+	const year = $derived(data.year);
 </script>
 
 <a
@@ -29,7 +30,11 @@
 <!-- Hero Section -->
 <section class="relative mb-16">
 	<!-- Tape effect decoration -->
-	<div class="absolute -top-4 left-1/2 -translate-x-1/2 w-24 h-8 tape-effect z-10"></div>
+	<div
+		class="absolute -top-4 left-1/2 -translate-x-1/2 w-24 h-8 tape-effect z-10 flex items-center justify-center text-2xl"
+	>
+		{year}
+	</div>
 	<div
 		class="relative sketch-border bg-white overflow-hidden shadow-[4px_4px_0px_rgba(28,27,27,0.1)]"
 	>

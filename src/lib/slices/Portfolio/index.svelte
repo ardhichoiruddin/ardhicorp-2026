@@ -29,6 +29,7 @@
 					shortDescription={item.product_link.data?.short_description || ''}
 					imageUrl={item.product_link.data?.image.url || ''}
 					projectNow={item.product_link.data?.project_now || 'Not Started'}
+					year={item.product_link.data?.year || ''}
 				/>
 			{/if}
 		{/each}

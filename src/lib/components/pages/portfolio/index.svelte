@@ -17,6 +17,7 @@
 			shortDescription={item.data.short_description || ''}
 			imageUrl={item.data.image.url || ''}
 			projectNow={item.data.project_now || 'Not Started'}
+			year={item.data.year || ''}
 		/>
 	{/each}
 </div>

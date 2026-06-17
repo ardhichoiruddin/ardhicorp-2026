@@ -6,9 +6,10 @@
 		imageUrl: string;
 		title: string;
 		shortDescription: string;
+		year: string;
 	}
 
-	let { uid, projectNow, imageUrl, title, shortDescription }: Props = $props();
+	let { uid, projectNow, imageUrl, title, shortDescription, year }: Props = $props();
 </script>
 
 <div
@@ -37,7 +38,9 @@
 		{shortDescription}
 	</p>
 	<div class="flex items-center justify-between">
-		<div></div>
+		<div>
+			<span class="text-xl">{year}</span>
+		</div>
 		<a class="font-body-lg text-note text-primary underline" href={`/portfolio/${uid}`}
 			>View Project →</a
 		>

@@ -254,6 +254,17 @@ interface PortfolioDocumentData {
 	short_description: prismic.KeyTextField;
 	
 	/**
+	 * Year field in *Portfolio*
+	 *
+	 * - **Field Type**: Select
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: portfolio.year
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/fields/select
+	 */
+	year: prismic.SelectField<"2017" | "2018" | "2019" | "2020" | "2021" | "2022" | "2023" | "2024" | "2025" | "2026" | "2027">;
+	
+	/**
 	 * Link field in *Portfolio*
 	 *
 	 * - **Field Type**: Link
@@ -824,7 +835,7 @@ export interface PortfolioSliceDefaultPrimaryPortfolioItem {
 	 * - **API ID Path**: portfolio.default.primary.portfolio[].product_link
 	 * - **Documentation**: https://prismic.io/docs/fields/content-relationship
 	 */
-	product_link: ContentRelationshipFieldWithData<[{"id":"portfolio","fields":["image","title","project_now","short_description"]}]>;
+	product_link: ContentRelationshipFieldWithData<[{"id":"portfolio","fields":["image","title","project_now","short_description","year"]}]>;
 }
 
 /**

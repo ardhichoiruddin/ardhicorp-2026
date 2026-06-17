@@ -17,7 +17,7 @@ export const load: PageServerLoad = async ({ fetch, cookies, url, setHeaders }) 
 			pageSize: pageSize,
 			// Opsional: Urutkan berdasarkan tanggal rilis terbaru
 			orderings: {
-				field: 'document.first_publication_date',
+				field: 'my.portfolio.year',
 				direction: 'desc'
 			}
 		});
