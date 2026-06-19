@@ -1,6 +1,6 @@
-import { createClient as baseCreateClient } from "@prismicio/client";
+import { createClient as baseCreateClient } from '@prismicio/client';
 import { type CreateClientConfig, enableAutoPreviews } from '@prismicio/svelte/kit';
-import prismicConfig from "../../prismic.config.json";
+import prismicConfig from '../../prismic.config.json';
 
 /**
  * The project's Prismic repository name.
@@ -16,7 +16,7 @@ export const repositoryName = prismicConfig.repositoryName;
 export const createClient = ({ cookies, ...config }: CreateClientConfig = {}) => {
 	const client = baseCreateClient(repositoryName, {
 		routes: prismicConfig.routes,
-		...config,
+		...config
 	});
 
 	enableAutoPreviews({ client, cookies });
