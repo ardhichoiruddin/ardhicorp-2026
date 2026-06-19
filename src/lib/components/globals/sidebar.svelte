@@ -64,12 +64,12 @@
 		<div class="mb-8 hidden xl:block">
 			<a href="/">
 				<span class="font-h2 text-h2 text-on-surface">{name}</span>
-				<p class="font-note text-note text-on-surface-variant italic">
+				<p class="font-body-lg text-note text-on-surface-variant italic">
 					{title}
 				</p>
 			</a>
 		</div>
-		<ul class="space-y-4">
+		<ul class="space-y-4 pt-4 xl:pt-0">
 			{#each menus as item, i (i)}
 				<li>
 					<a
