@@ -7,8 +7,9 @@
 
 	const { data }: PageProps = $props();
 	const privacyPolicy = $derived(data.page.data);
+	const metadata = $derived(data.page.data);
 </script>
 
-<Seo title="Privary & Policy" description="Privary & Policy" />
+<Seo title={metadata.meta_title as string} description={metadata.meta_description as string} />
 <PrivacyPolicy data={privacyPolicy} />
 <SliceZone slices={data.page.data.slices} {components} />

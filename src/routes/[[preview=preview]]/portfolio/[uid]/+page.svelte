@@ -7,11 +7,12 @@
 
 	const { data }: PageProps = $props();
 	const pageData = $derived(data.page.data);
+	const metadata = $derived(data.page.data);
 </script>
 
 <Seo
-	title={pageData.title || ''}
-	description={pageData.short_description || ''}
+	title={metadata.meta_title || pageData.title || ''}
+	description={metadata.meta_description || pageData.short_description || ''}
 	keywords={`website portfolio ${pageData.tech_stacks.join(',')}`}
 	images={[
 		{
@@ -24,8 +25,8 @@
 	twitter={{
 		card: 'summary_large_image',
 		site: `https://ardhicorp.com/portfolio/${data.page.uid}`,
-		title: pageData.title || '',
-		description: pageData.short_description || '',
+		title: metadata.meta_title || pageData.title || '',
+		description: metadata.meta_description || pageData.short_description || '',
 		image: pageData.image.url || ''
 	}}
 />

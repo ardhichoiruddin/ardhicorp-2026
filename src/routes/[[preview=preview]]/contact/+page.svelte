@@ -7,9 +7,13 @@
 
 	const { data }: PageProps = $props();
 	const contactData = $derived(data.page.data);
+	const metadata = $derived(data.page.data);
 </script>
 
-<Seo title={contactData.title || ''} description={contactData.sub_title || ''} />
+<Seo
+	title={metadata.meta_title || contactData.title || ''}
+	description={metadata.meta_description || contactData.sub_title || ''}
+/>
 
 <Contact data={contactData} />
 <SliceZone slices={data.page.data.slices} {components} />
