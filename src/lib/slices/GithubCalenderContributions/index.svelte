@@ -28,33 +28,35 @@
 	<h2 class="font-h2 text-h2 text-primary wavy-underline mb-8">
 		{title}
 	</h2>
-	<svelte:boundary>
-		<div class="bg-surface-container-lowest p-6 sketch-border">
+	<div class="bg-surface-container-lowest p-6 sketch-border">
+		<svelte:boundary>
 			{#await contributionsPromise then contributionsData}
 				<div class="w-full h-full overflow-x-auto">
 					<ActivityCalendarWidget
 						data={contributionsData}
-						daysToRender={310}
+						daysToRender={330}
 						levelColorMode="dark"
 						showSummary={true}
 						showLevels={true}
 						levelColors={['#ebedf0', '#1c1c1c']}
+						mode="day"
+						showWeekdayLabels={false}
 					/>
 				</div>
 			{/await}
-		</div>
-		{#snippet pending()}
-			<div class="bg-surface-container-lowest p-6 sketch-border">
-				<span>Please wait. Currently retrieving data...</span>
-			</div>
-		{/snippet}
-		{#snippet failed(error: any, reset)}
-			<div class="bg-surface-container-lowest p-6 sketch-border">
-				<div class="text-error">
-					<p>Failed to load GitHub data: {error?.message}</p>
-					<button onclick={reset} class="btn">Try Again</button>
+			{#snippet pending()}
+				<div class="p-6 sketch-border">
+					<span>Please wait. Currently retrieving data...</span>
 				</div>
-			</div>
-		{/snippet}
-	</svelte:boundary>
+			{/snippet}
+			{#snippet failed(error: any, reset)}
+				<div class="p-6 sketch-border">
+					<div class="text-error">
+						<p>Failed to load GitHub data: {error?.message}</p>
+						<button onclick={reset} class="btn">Try Again</button>
+					</div>
+				</div>
+			{/snippet}
+		</svelte:boundary>
+	</div>
 </section>
